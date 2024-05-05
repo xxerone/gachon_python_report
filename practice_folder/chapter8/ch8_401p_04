@@ -1,0 +1,58 @@
+#p401 4번
+#프라이빗 객체로 만들어야함. 이해 해야함.
+class Rectangle:
+    def __init__(self, x, y, w, h): #생성자 method (변수 선언)
+        self.x = x #self는 객체 표현
+        self.y = y
+        self.w = w
+        self.h = h #착각하지 말기 -> self 뒤에는 아무거나 붙어도 되는데 등호 뒤에는 선언한거로 붙이기! (왜지?)
+
+    def getArea(self):
+        s = self.w * self.h
+        #print(self.w * self.h)
+        return s #p378 참조
+    
+    def __str__(self):
+        s1 = str(self.x)
+        s2 = str(self.y)
+        s3 = str(self.w*self.h)
+        #print(type(s1), type(s2), type(s3))
+        return s1,s2,s3
+
+    def getX(self): #접근자 1 / 조회할 때 필요
+        #print(self.x)
+        return self.x
+    
+    def getY(self): #접근자 2
+        #print(self.y)
+        return self.y
+
+    def setX(self, x): #설정자 1 / 변경할 때 필요
+        #print(x)
+        #print(self.x)
+        self.x = x
+
+    def setY(self, y): #설정자 2
+        #print("y = ", y)
+        #print(self.y)
+        self.y = y
+
+    def overlap(self, r): #other는 선언 후 사용해야함.
+        #꼭 self가 있어야 하는건가?
+        print(r.x == self.x and r.y == self.y)
+        return r.x == self.x and r.y == self.y
+        
+
+r1 = Rectangle(0,0,100,100)
+#r1.getArea()
+#r1.__str__()
+#r1.setX(0)
+#r1.setY(0)
+#r1.getX()
+#r1.getY()
+r2 = Rectangle(10,10,100,100)
+s = r1.overlap(r2) #제대로 나왔는데..?
+if(s):
+    print("r1과 r2는 같습니다.")
+else:
+    print("r1과 r2는 같지 않습니다.")
