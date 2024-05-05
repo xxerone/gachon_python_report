@@ -1,4 +1,4 @@
-#P - 번
+#P394 - vector
 
 class Vector2D:
     def __init__(self, x, y):
@@ -10,3 +10,12 @@ class Vector2D:
     
     def __sub__(self, other):
         return Vector2D(self.x - other.x, self.y - other.y)
+    
+    def __str__(self):
+        return '(%g, %g)' % (self.x, self.y)
+
+u = Vector2D(0,1)
+v = Vector2D(1,0)
+w = Vector2D(1,1)
+a = u + v
+print(a)
