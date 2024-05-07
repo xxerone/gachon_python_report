@@ -48,7 +48,7 @@ class Person:
         self.email = email
         print("email set" +self.email)
 
-#private는 클래스 안에서만 사용 가능해서 메소드로 접근하고 변경해야 접근자 설정자 필요
+#private는 클래스 안에서만 사용 가능해서 메소드로 접근하고 변경해야 접근자 설정자 필요 / private는 보호
 #p1 = Person("Kim", office = "1234567", email = "kim@company.com")
 p2 = Person("Park", office = "2345678") #괄호 조심!
 p2.setEmail("park@company.com")
