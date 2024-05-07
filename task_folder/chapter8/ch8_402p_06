@@ -1,1 +1,52 @@
+class Person:
+    def __init__(self, name, mobile = 0, office = 1, email = 0): #디폴트 아닌거는 전부 앞으로
+        self.name = name
+        self.mobile = mobile
+        self.office = office
+        self.email = email
+        print(self.name, self.mobile, self.office, self.email)
+        
+    def __str__(self): #self 안쓰는거 조심
+        #print(self.name, self.mobile, self.office, self.email)
+        return self.name, self.mobile, self.office, self.email
+    """
+    def getName(self): #접근자 2
+        #print(self.y)
+        return self.name
 
+    def setName(self, name): #설정자 1 / 변경할 때 필요
+        #print(x)
+        #print(self.x)
+        self.name = name
+    
+    def getMobile(self): #접근자 2
+        #print(self.y)
+        return self.name
+
+    def setMobile(self, name): #설정자 1 / 변경할 때 필요
+        #print(x)
+        #print(self.x)
+        self.name = name
+
+    def getOffice(self): #접근자 2
+        #print(self.y)
+        return self.name
+
+    def setOffice(self, name): #설정자 1 / 변경할 때 필요
+        #print(x)
+        #print(self.x)
+        self.name = name
+"""
+    def getEmail(self): #접근자 2
+        #print(self.y)
+        print("email get" + self.email)
+        return self.email
+
+    def setEmail(self, email): #설정자 1 / 변경할 때 필요
+        #print(x)
+        self.email = email
+        print("email set" + self.email)
+
+#p1 = Person("Kim", office = "1234567", email = "kim@company.com")
+p2 = Person("Park", office = "2345678") #괄호 조심!
+p2.setEmail("park@company.com")
