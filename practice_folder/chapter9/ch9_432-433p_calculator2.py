@@ -1,5 +1,5 @@
 #p432-433 calculator2
-from thinker import *
+from tkinter import *
 
 window = Tk()
 window.title("My Calculator")
