@@ -1,0 +1,4 @@
+import random
+li = ["a", "b", "c", "d", "e", "f", "g"]
+random.shuffle(li)
+print(li[0:3])
