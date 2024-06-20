@@ -1,0 +1,50 @@
+import re
+password = input("패스워드를 입력하세요.")
+flag = 0
+while True:
+    if (len(password) < 8):
+        flag = -1
+        break
+    elif not re.search("[a-z]", password):
+        flag = -1
+        break
+    elif not re.search("[A-Z]", password):
+        flag = -1
+        break
+    elif not re.search("[0-9]", password):
+        flag = -1
+        break
+    elif not re.search("[_@$]", password):
+        flag = -1
+        break
+    else:
+        flag = 0
+        print("유효한 패스워드")
+        break
+
+if flag == -1:
+    print("유효한 패스워드가 아닙니다.")
+
+
+infile = open("d:\\input.txt", "r")
+line = infile.readline() #파일에서 1번째 줄을 읽는다
+#readline는 파일에서 한 줄을 읽고 줄 끝의 개행 문자를 포함한 문자열을 반환한다.
+while line != "": #현재 줄이 빈 문자열이 아니면 반복 / readline는 파일의 끝에 도달하면 빈 문자열을 반환하기 때문에 이렇게 씀
+    print(line) #현재줄 출력
+    line = infile.readline() #파일에서 다음 줄 읽는다. 이 줄이 while 조건에서 빈 문자열이 아닌지 검사되며 빈 문자열이면 반복을 종료
+    line = infile.readline() #인자가 없을 경우 오른쪽 공백을 제거 / (인자가 있으면 오른쪽으로 인자의 문자열의 모든 조합을 제거)
+    #strip 모든 경우의수 이해하기!
+
+infile = open("d:\\output.txt", "w")
+infile.write("김영희\n") #줄바꿈 되나?
+
+with open("test.txt", "w") as f:
+    f.write("김영희\n")
+    f.write("최자영\n")
+
+#outfile.write("총 매출 = " + str(sum)+"\n") - 줄바꿈 되나
+
+#p15 - 실행해보며 위에 읽어서 가지고 오는 코드랑 비슷한지 보기!
+infile = open("scores.txt", "r")
+for line in infile:
+    print(line)
