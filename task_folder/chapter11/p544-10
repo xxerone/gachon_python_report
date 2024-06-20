@@ -1,0 +1,8 @@
+def myfilter(li):
+    li2 = li.sorted()
+    print(li2)
+li = [1,2,3,4,5]
+myfilter(li)
+
+#result = filter(myfilter, li) # filter 함수는 특정 조건을 만족하는 요소만 뽑음
+#print(result)
