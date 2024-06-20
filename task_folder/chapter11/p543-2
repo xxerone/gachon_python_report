@@ -1,0 +1,3 @@
+i = input("input int or float : ")
+i2 = eval(i)
+print(i2)
